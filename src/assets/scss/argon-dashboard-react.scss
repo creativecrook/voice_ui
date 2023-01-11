@@ -1,0 +1,173 @@
+/*!
+
+=========================================================
+* Argon Dashboard React - v1.2.2
+=========================================================
+
+* Product Page: https://www.creative-tim.com/product/argon-dashboard-react
+* Copyright 2022 Creative Tim (https://www.creative-tim.com)
+* Licensed under MIT (https://github.com/creativetimofficial/argon-dashboard-react/blob/master/LICENSE.md)
+
+* Coded by Creative Tim
+
+=========================================================
+
+* The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
+
+*/
+
+// Core
+
+@import "argon-dashboard/custom/functions";
+@import "argon-dashboard/custom/variables";
+@import "argon-dashboard/custom/mixins";
+
+@import url("https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,300,0,0");
+
+// bootstrap (4.6.0) components
+
+@import "~bootstrap/scss/root";
+@import "~bootstrap/scss/reboot";
+@import "~bootstrap/scss/type";
+@import "~bootstrap/scss/images";
+@import "~bootstrap/scss/code";
+@import "~bootstrap/scss/grid";
+@import "~bootstrap/scss/tables";
+@import "~bootstrap/scss/forms";
+@import "~bootstrap/scss/buttons";
+@import "~bootstrap/scss/transitions";
+@import "~bootstrap/scss/dropdown";
+@import "~bootstrap/scss/button-group";
+@import "~bootstrap/scss/input-group";
+@import "~bootstrap/scss/custom-forms";
+@import "~bootstrap/scss/nav";
+@import "~bootstrap/scss/navbar";
+@import "~bootstrap/scss/card";
+@import "~bootstrap/scss/breadcrumb";
+@import "~bootstrap/scss/pagination";
+@import "~bootstrap/scss/badge";
+@import "~bootstrap/scss/jumbotron";
+@import "~bootstrap/scss/alert";
+@import "~bootstrap/scss/progress";
+@import "~bootstrap/scss/media";
+@import "~bootstrap/scss/list-group";
+@import "~bootstrap/scss/close";
+@import "~bootstrap/scss/modal";
+@import "~bootstrap/scss/tooltip";
+@import "~bootstrap/scss/popover";
+@import "~bootstrap/scss/carousel";
+@import "~bootstrap/scss/utilities";
+@import "~bootstrap/scss/print";
+
+// Argon utilities and components
+
+@import "argon-dashboard/custom/reboot";
+@import "argon-dashboard/custom/utilities";
+@import "argon-dashboard/custom/components";
+
+// Vendor (Plugins)
+
+@import "argon-dashboard/custom/vendors";
+
+// Docs components
+
+@import "argon-dashboard/docs/variables";
+@import "argon-dashboard/docs/nav";
+@import "argon-dashboard/docs/clipboard-js";
+@import "argon-dashboard/docs/component-examples";
+@import "argon-dashboard/docs/prism";
+@import "argon-dashboard/docs/content";
+@import "argon-dashboard/docs/sidebar";
+@import "argon-dashboard/docs/footer";
+
+// React Differences
+@import "react/react-differences";
+
+.mic {
+    width: 80px;
+    height: 80px;
+    background: $red;
+    border-radius: 80px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    bottom: 20px;
+    left: 50%;
+    margin-left: -40px;
+    border: white solid 2px;
+    &:hover{
+        background: $ct-primary;
+    }
+    &.active {
+        background: $ct-primary;
+    }
+    cursor: pointer;
+    span.material-symbols-outlined {
+        font-size: 48px;
+        color: white;
+    }
+}
+
+.transcript {
+    position: fixed;
+    right: 50%;
+    margin-right: 55px;
+    bottom: 20px;
+    background: #18204d;
+    color: white;
+    border-radius: 10px;
+    padding: 20px 30px;
+    font-size: 24px;
+    border: $ct-primary solid 2px;
+    .arrow {
+        content: "";
+        position: absolute;
+        border-left: 15px solid #18204d;
+        border-top: 15px solid transparent;
+        border-bottom: 15px solid transparent;
+        right: -15px;
+        margin-top: 3px;
+    }
+}
+
+/*Mic ripples*/
+.circles {
+    height: 180px;
+    position: relative;
+    width: 180px;
+    position: fixed;
+    bottom: -30px;
+    left: 50%;
+    margin-left: -90px;
+    > div {
+        animation: growAndFade 3s infinite ease-out;
+        background-color: dodgerblue;
+        border-radius: 50%;
+        height: 100%;
+        opacity: 0;
+        position: absolute;
+        width: 100%;
+    }
+
+    .circle1 {
+        animation-delay: 0.2s;
+    }
+    .circle2 {
+        animation-delay: 1s;
+    }
+    .circle3 {
+        animation-delay: 2s;
+    }
+}
+
+@keyframes growAndFade {
+    0% {
+        opacity: 0.25;
+        transform: scale(0.5);
+    }
+    100% {
+        opacity: 0;
+        transform: scale(1);
+    }
+}
